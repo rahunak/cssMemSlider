@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+
     <meta name="description" content="only pure css with Mem Slider project" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="" type="image/x-icon">
@@ -9,23 +10,35 @@
 
     <title>cssMemSlider</title>
 </head>
-
 <body>
-
     <div class="slider">
-        <div class="slider__wrapper">
-            <input type="radio" name="r" id="input1" checked>
-            <input type="radio" name="r" id="input2" >
-            <input type="radio" name="r" id="input3" >
-            <input type="radio" name="r" id="input4" >
-            <input type="radio" name="r" id="input5" >
 
+            <input type="radio" name="radioButton" id="radio1" checked>
+            <input type="radio" name="radioButton" id="radio2">
+            <input type="radio" name="radioButton" id="radio3">
+            <input type="radio" name="radioButton" id="radio4">
+            <input type="radio" name="radioButton" id="radio5">
+
+        <div class="slider__wrapper">
             <div class="slider__canvas">
-                <div class="image"> <img src="./img/unknowAuthor.jpg" alt="image"></div>
-                <div class="image"> <img src="./img/Dali-postojanstwoPamjati.jpg" alt="image"></div>
-                <div class="image"> <img src="./img/jedvard-munk-krik.jpg" alt="image"></div>
-                <div class="image"> <img src="./img/MarkShagal-iAndVillage.jpg" alt="image"></div>
-                <div class="image"> <img src="./img/vanGog-starsNight.jpg" alt="image"></div>
+                <div class="canvas_content">
+                    <div class="slide mainSlide">
+                        <img class="slide__image " src="./img/unknowAuthor.jpg" alt="image">
+                    </div>
+                    <div class="slide">
+                        <img class="slide__image" src="./img/Dali-postojanstwoPamjati.jpg" alt="image">
+                    </div>
+                    <div class="slide">
+                        <img class="slide__image" src="./img/jedvard-munk-krik.jpg" alt="image">
+                    </div>
+                    <div class="slide">
+                        <img class="slide__image" src="./img/MarkShagal-iAndVillage.jpg" alt="image">
+                    </div>
+                    <div class="slide">
+                        <img class="slide__image" src="./img/vanGog-starsNight.jpg" alt="image">
+                    </div>
+                </div>
+              
             </div>
             <div class="slider__controls">
                 <div class="phrases">
@@ -36,17 +49,18 @@
                     <div class="phrase fifth">fifth</div>
                 </div>
                 <div class="navigation">
-                    <label for="input1" class="chunk btn1"></label>
-                    <label for="input2" class="chunk btn2"></label>
-                    <label for="input3" class="chunk btn3"></label>
-                    <label for="input4" class="chunk btn4"></label>
-                    <label for="input5" class="chunk btn5"></label>
+                    <label for="radio1" class="chunk btn1">radio1</label>
+                    <label for="radio2" class="chunk btn2">radio2</label>
+                    <label for="radio3" class="chunk btn3">radio3</label>
+                    <label for="radio4" class="chunk btn4">radio4</label>
+                    <label for="radio5" class="chunk btn5">radio5</label>
                 </div>
             </div>
 
-         
+
         </div>
     </div>
 
 </body>
+
 </html>
