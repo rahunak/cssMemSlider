@@ -7,6 +7,17 @@ html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@font-face {
+    font-family: ComicFont;
+    src: url(../fonts/KGHAPPY.ttf);
+}
+
+body {
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+
+}
 
 
 .slider {
@@ -14,22 +25,25 @@ html {
     flex-direction: column;
     align-items: center;
     background-color: crimson;
-    min-height: 100vh;
-    max-height: fit-content;
+    width: 90%;
+    height: 90%;
 }
 
 .slider__wrapper {
     margin-top: 1%;
-    width: 70%;
-
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
 }
 
 .slider__canvas {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     border-radius: 2%;
-
+    overflow: hidden;
 
 }
 
@@ -46,7 +60,7 @@ html {
 
 .slide {
     width: 20%;
-
+    height: 100%;
     transition: all .4s ease-out;
     display: flex;
     justify-content: flex-start;
@@ -58,30 +72,41 @@ html {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background-color: green;
+    background-color: crimson;
 }
 
 input[name="radioButton"] {
     visibility: hidden;
-    width: 0.1%;
-    height: 0.1%;
+    width: 0;
+    height: 0;
+
+}
+
+
+
+.slider__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
 }
 
 .phrases {
 
-    height: 100%;
+    height: 4rem;
     width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     transition: all .5s ease;
 
+
 }
 
 .phrase {
 
     color: azure;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     width: 20%;
     height: 4rem;
     transition: all .5s ease;
@@ -90,31 +115,27 @@ input[name="radioButton"] {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-
-}
-
-.slider__controls {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    height: 5rem;
-    padding: 0.5rem 0;
-    margin: 1rem 0;
+    font-family: "ComicFont",sans-serif;
+    color: whitesmoke;
+    text-shadow: 1px 0 1px #000,
+        0 1px 1px #000,
+        -1px 0 1px #000,
+        0 -1px 1px #000;
+      
 }
 
 .navigation {
-    display: flex;
-    height: 100%;
-    width: 50%;
-    column-gap: 1rem;
-    justify-content: flex-end;
+    display:flex;
+    height: 4rem;
+    column-gap: 0.5rem;
+    justify-content: center;
     align-items: center;
 }
 
 .chunk {
-    height: 3.5rem;
-    width: 3.5rem;
+   height: 2.5rem;
+    width: 2.5rem;
+
     background-color: crimson;
 
     cursor: pointer;
@@ -131,8 +152,8 @@ input[name="radioButton"] {
 
 .bar {
     display: block;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
     background-color: rgb(0, 0, 0);
     border: 0.2rem solid rgb(0, 0, 0);
     border-radius: 50%;
@@ -204,12 +225,25 @@ input[name="radioButton"] {
 #radio4:checked~.slider__wrapper .slider__controls .navigation .btn4 .bar,
 #radio5:checked~.slider__wrapper .slider__controls .navigation .btn5 .bar {
     background-color: crimson;
+    animation-name: check;
+    animation-duration: .5s;
 }
+
+@keyframes check {
+    0% {}
+    50% {
+        width: 0.1rem;
+        height: 0.1rem;
+    }
+    100% {}
+}
+
+
 
 @media (max-width:677.98px) {
     .slider__controls {
-        height: 15rem;
-        margin-top: 0.3rem;
+        height: 8rem;
+        margin-top: 0.2rem;
         flex-direction: column-reverse;
         justify-content: space-between;
         align-items: center;
@@ -217,33 +251,21 @@ input[name="radioButton"] {
 
     .navigation {
         width: 100%;
+        height: 3.5rem;
         justify-content: space-evenly;
         align-items: center;
         column-gap: 0.5rem;
     }
-
+    .chunk{
+        width: 2rem;
+        height: 2rem;
+    }
     .phrases {
         width: 100%;
     }
 
     .phrase {
         width: 20%;
-        
-    }
-}
 
-
-@media (min-width:678px) and (max-width:1000px) {
-    .slider__wrapper{
-        min-width: 60vw;
-        max-width: 60vw;
-    }
-
-}
-@media (min-width:1000px) {
-    .slider__wrapper{
-        width: 30vw;
-        max-width: 30vw;
-       
     }
 }
