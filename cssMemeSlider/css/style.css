@@ -1,0 +1,310 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@font-face {
+    font-family: ComicFont;
+    src: url(../fonts/KGHAPPY.ttf);
+}
+
+body {
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: crimson;
+    width: 90%;
+    height: 90%;
+}
+
+.slider__wrapper {
+    margin-top:0.5rem;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.slider__canvas {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2%;
+  
+
+}
+
+.canvas_content {
+
+    height: 100%;
+    width: calc(100%*5);
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    transition: 500ms;
+
+}
+
+.slide {
+    width: 20%;
+    height: 100%;
+    transition: all .4s ease-out;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.slide__image {
+    display: block;
+    border-radius: 2%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: crimson;
+    
+}
+
+input[name="radioButton"] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+
+}
+
+
+
+.slider__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+}
+
+.phrases {
+
+    height: 4rem;
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all .5s ease;
+
+
+}
+
+.phrase {
+
+    color: azure;
+    font-size: 1.6rem;
+    width: 20%;
+    overflow: hidden;
+    height: 4rem;
+    transition: all .5s ease;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "ComicFont", sans-serif;
+    color: whitesmoke;
+    text-shadow: 1% 0 1% #000,
+        0 1% 1% #000,
+        -1% 0 1% #000,
+        0 -1% 1% #000;
+
+}
+
+.navigation {
+    display: flex;
+    height: 4rem;
+    column-gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.chunk {
+    height: 2.5rem;
+    width: 2.5rem;
+
+    background-color: crimson;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.bar {
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    background-color: rgb(0, 0, 0);
+    border: 0.2rem solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+/* .bar:active{
+    border-radius: 0%;
+} */
+#radio1:active~.slider__wrapper .slider__controls .navigation .btn1,
+#radio1:active~.slider__wrapper .slider__controls .navigation .btn1 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio2:active~.slider__wrapper .slider__controls .navigation .btn2,
+#radio2:active~.slider__wrapper .slider__controls .navigation .btn2 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio3:active~.slider__wrapper .slider__controls .navigation .btn3,
+#radio3:active~.slider__wrapper .slider__controls .navigation .btn3 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio4:active~.slider__wrapper .slider__controls .navigation .btn4,
+#radio4:active~.slider__wrapper .slider__controls .navigation .btn4 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio5:active~.slider__wrapper .slider__controls .navigation .btn5,
+#radio5:active~.slider__wrapper .slider__controls .navigation .btn5 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio1:hover~.slider__wrapper .slider__controls .navigation .btn1 .bar {
+    border: 0.2rem solid whitesmoke;
+    background-color: whitesmoke;
+}
+
+#radio2:hover~.slider__wrapper .slider__controls .navigation .btn2 .bar {
+    border: 0.2rem solid whitesmoke;
+    background-color: whitesmoke;
+}
+
+#radio3:hover~.slider__wrapper .slider__controls .navigation .btn3 .bar {
+    border: 0.2rem solid whitesmoke;
+    background-color: whitesmoke;
+}
+
+#radio4:hover~.slider__wrapper .slider__controls .navigation .btn4 .bar {
+    border: 0.2rem solid whitesmoke;
+    background-color: whitesmoke;
+}
+
+#radio5:hover~.slider__wrapper .slider__controls .navigation .btn5 .bar {
+    border: 0.2rem solid whitesmoke;
+    background-color: whitesmoke;
+}
+
+
+#radio1:checked~.slider__wrapper .slider__canvas .canvas_content .mainSlide,
+#radio1:checked~.slider__wrapper .slider__controls .phrases .mainPhrase {
+    margin-left: 0%;
+   
+}
+
+#radio2:checked~.slider__wrapper .slider__canvas .canvas_content .mainSlide,
+#radio2:checked~.slider__wrapper .slider__controls .phrases .mainPhrase {
+    margin-left: -20%;
+}
+
+#radio3:checked~.slider__wrapper .slider__canvas .canvas_content .mainSlide,
+#radio3:checked~.slider__wrapper .slider__controls .phrases .mainPhrase {
+    margin-left: -40%;
+}
+
+#radio4:checked~.slider__wrapper .slider__canvas .canvas_content .mainSlide,
+#radio4:checked~.slider__wrapper .slider__controls .phrases .mainPhrase {
+    margin-left: -60%;
+}
+
+#radio5:checked~.slider__wrapper .slider__canvas .canvas_content .mainSlide,
+#radio5:checked~.slider__wrapper .slider__controls .phrases .mainPhrase {
+    margin-left: -80%;
+}
+
+#radio1:checked~.slider__wrapper .slider__controls .phrases .mainPhrase,
+#radio2:checked~.slider__wrapper .slider__controls .phrases .secondPhrase,
+#radio3:checked~.slider__wrapper .slider__controls .phrases .thirdPhrase,
+#radio4:checked~.slider__wrapper .slider__controls .phrases .fourthPhrase,
+#radio5:checked~.slider__wrapper .slider__controls .phrases .fifthPhrase {
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+}
+
+#radio1:checked~.slider__wrapper .slider__controls .navigation .btn1 .bar,
+#radio2:checked~.slider__wrapper .slider__controls .navigation .btn2 .bar,
+#radio3:checked~.slider__wrapper .slider__controls .navigation .btn3 .bar,
+#radio4:checked~.slider__wrapper .slider__controls .navigation .btn4 .bar,
+#radio5:checked~.slider__wrapper .slider__controls .navigation .btn5 .bar {
+    background-color: crimson;
+    animation-name: check;
+    animation-duration: .5s;
+}
+
+@keyframes check {
+    0% {}
+
+    50% {
+        width: 0.1rem;
+        height: 0.1rem;
+    }
+
+    100% {}
+}
+
+
+
+@media (max-width:677.98px) {
+    .slider__controls {
+        height: 8rem;
+        margin-top: 0.2rem;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navigation {
+        width: 100%;
+        height: 3.5rem;
+        justify-content: space-evenly;
+        align-items: center;
+        column-gap: 0.5rem;
+    }
+
+    .chunk {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .phrases {
+        width: 100%;
+    }
+
+    .phrase {
+        width: 20%;
+
+    }
+}
