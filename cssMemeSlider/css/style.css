@@ -159,7 +159,39 @@ input[name="radioButton"] {
     border: 0.2rem solid rgb(0, 0, 0);
     border-radius: 50%;
 }
-
+/* .bar:active{
+    border-radius: 0%;
+} */
+#radio1:active~.slider__wrapper .slider__controls .navigation .btn1,
+#radio1:active~.slider__wrapper .slider__controls .navigation .btn1 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio2:active~.slider__wrapper .slider__controls .navigation .btn2,
+#radio2:active~.slider__wrapper .slider__controls .navigation .btn2 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio3:active~.slider__wrapper .slider__controls .navigation .btn3,
+#radio3:active~.slider__wrapper .slider__controls .navigation .btn3 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio4:active~.slider__wrapper .slider__controls .navigation .btn4,
+#radio4:active~.slider__wrapper .slider__controls .navigation .btn4 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
+#radio5:active~.slider__wrapper .slider__controls .navigation .btn5,
+#radio5:active~.slider__wrapper .slider__controls .navigation .btn5 .bar {
+    border-radius: 0%;
+    border: 0.2rem solid green;
+    background-color: green;
+}
 #radio1:hover~.slider__wrapper .slider__controls .navigation .btn1 .bar {
     border: 0.2rem solid whitesmoke;
     background-color: whitesmoke;
